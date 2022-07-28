@@ -1,0 +1,42 @@
+.ul {
+    font-family: 'Archivo Black';
+    font-weight:bold;
+    font-size:13px;
+    justify-content: center;
+    align-items: center;
+    background-position: center center;
+    flex-direction: column;
+    align-self: center
+}
+
+.li {
+    display:inline;
+}
+
+.button {
+	background-color:rgb(241, 241, 28);
+	border-radius:8px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+    font: 700 4em/1 "Oswald", sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+
+.button:hover {
+    color: yellow;
+    background-color: #1A1A1A;
+    border-radius:8px;
+	border:1px solid yellow;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}

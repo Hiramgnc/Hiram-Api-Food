@@ -19,11 +19,11 @@ module.exports = (sequelize) => {
 
     image: {
       type: DataTypes.STRING,
-      // allowNull: true,
-      defaultValue: "https://cdn.pixabay.com/photo/2016/03/17/23/30/salad-1264107_960_720.jpg"
+      allowNull: true,
+      // defaultValue: "https://cdn.pixabay.com/photo/2017/09/16/19/21/salad-2756467_960_720.jpg"
     },
 
-    //ResumendelPlato = summary
+    //Resumen del Plato = summary
     summary: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,11 +38,11 @@ module.exports = (sequelize) => {
       }
     },
 
-    //Paso a paso = steps (que esta dentro de un arreglo (analized instructions)  => que contiene objetos )
-    steps: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // //Paso a paso = steps (que esta dentro de un arreglo (analized instructions)  => que contiene objetos )
+    // steps: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
 
     analyzedInstructions: {
       type: DataTypes.TEXT,
