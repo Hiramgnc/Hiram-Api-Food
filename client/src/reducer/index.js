@@ -2,7 +2,9 @@
 const inicialState = {
     recipes: [],
     allRecipes: [],
-
+    //Formulario
+    diets: [],
+    
     typeDiets: []
 
 }
@@ -15,6 +17,18 @@ function roodReducer(state = inicialState, action) {
                 ...state,
                 recipes: action.payload,
                 allRecipes: action.payload
+            }
+
+        //formulario
+        case 'GET_DIETS':
+            return {
+                ...state,
+                diets: action.payload
+            }
+
+        case 'POST_RECIPE':
+            return {
+                ...state,
             }
 
         // SearchBar

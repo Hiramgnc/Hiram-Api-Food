@@ -27,6 +27,28 @@ export function getNameRecipes (title) {
     }
 }
 
+//formulario
+export function getDiets () {
+    return async function (dispatch) {
+        let info = await axios.get("http://localhost:3001/diet", {
+
+        });
+        return dispatch({
+            type: 'GET_DIETS',
+            payload: info.data
+        });
+    }
+}
+
+export function postRecipe (payload) {
+    return async function (dispatch) {
+        const response = await axios.post("http://localhost:3001/recipe", payload);
+        console.log(response);
+        return response;
+    }
+}
+
+
 
 //Ordenamiento ascendente o descendente
 export function orderByName (payload) {

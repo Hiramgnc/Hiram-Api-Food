@@ -130,3 +130,5 @@ export default function Home() {
         </div>
     )
 }
+
+//image={e.image ? e.image : <img src="url de imagen"/>}
