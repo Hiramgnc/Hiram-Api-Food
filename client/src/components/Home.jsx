@@ -59,7 +59,7 @@ export default function Home() {
 
     return (
         <div>
-            <Link to="/recipe">Crear receta</Link>
+            <Link to="/recipe"><button>Crear receta</button></Link>
 
             <h1>Hiram Food Api</h1>
             <button onClick = {e => {handleClick(e)}}>

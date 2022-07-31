@@ -45,6 +45,7 @@ const getAllRecipes = async () => {
     const apiInfo = await getApiInfo()
     const dbInfo = await getDbInfo()
     const infoTotal = apiInfo.concat(dbInfo)
+    console.log(dbInfo)
 
     return infoTotal
 }
@@ -105,10 +106,9 @@ router.post('/', async (req, res) => {
         createdInDB
     })
 
-    let dietsDb = await Diet.findOne({
+    let dietsDb = await Diet.findAll({
         where: { name: diets }
     });
-
     recipeCreate.addDiets(dietsDb);
 
     res.send('Receta creada con exito');

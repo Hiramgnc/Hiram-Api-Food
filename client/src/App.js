@@ -12,13 +12,14 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/' component={LandingPage}/>
-        <Route path='/home' component={Home}/>
-        <Route path='/recipe' component={RecipeCreate}/>
-        <Route path='/home/:id' component={Detail}/>
+        <Route exact path='/home' component={Home}/>
+        <Route exact path='/recipe' component={RecipeCreate}/>
+        <Route exact path='/home/:id' component={Detail}/>
       </Switch>
     </div>
   </BrowserRouter>
   );
 }
+
 
 export default App;

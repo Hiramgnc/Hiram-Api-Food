@@ -4,9 +4,8 @@ const inicialState = {
     allRecipes: [],
     //Formulario
     diets: [],
-    
-    typeDiets: []
-
+    typeDiets: [],
+    detail: []
 }
 
 function roodReducer(state = inicialState, action) {
@@ -92,25 +91,23 @@ function roodReducer(state = inicialState, action) {
                     };
 
         //Dietas
-        // case 'FILTER_BY_DIETS':
-        //     const allRecipe = state.allRecipes;
-        //     const dietsFilter = action.payload === 'all' ? allRecipe : 
-        //     allRecipe.filter(e => e.status === action.payload);
-
-        //     return {
-        //         ...state,
-        //         recipes: dietsFilter
-        //     }
-        case "FILTER_BY_DIETS":
+        case 'FILTER_BY_DIETS':
             const allRecipe = state.allRecipes;
-            const dietsFilter = action.payload === "all" ? allRecipe : 
-            allRecipe.filter((el) => el.typeDiets.find((e) => e.name === action.payload)
-                );console.log(dietsFilter)
+            const dietsFilter = action.payload === 'all' ? allRecipe : 
+            allRecipe.filter(e => e.status === action.payload);
 
             return {
                 ...state,
-                recipes: dietsFilter,
-            };
+                recipes: dietsFilter
+            }
+
+
+        case 'GET_DETAIL':
+            return {
+                ...state,
+                detail: action.payload
+            }
+
 
             default: 
                 return state;

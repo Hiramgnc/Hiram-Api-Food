@@ -3,20 +3,45 @@ import { Link, useHistory } from 'react-router-dom';
 import { postRecipe, getDiets } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
+function validate(input) {
+    let errors = {};
+
+    if(!input.title) {
+    errors.title= 'Debe ingresar el nombre de la Receta'
+    } else if 
+    (!input.summary) {
+        errors.summary= 'Debe ingresar el resumen de la Receta'
+    } else if (!input.spoonacularScore<0 || input.spoonacularScore>100){
+        errors.spoonacularScore= 'El puntaje asignado debe estar entre 0 y 100'
+    } else if(!input.analyzedInstructions) {
+        errors.analyzedInstructions= 'Debe ingresar los pasos de la Receta'
+    } else if (!input.healthScore<0 || input.healthScore>100) {
+        errors.healthScore= 'El puntaje asignado debe estar entre 0 y 100'
+    } 
+    
+    return errors
+}
+
 export default function RecipeCreate() {
     const dispatch = useDispatch();
-    const dietType = useSelector(state => state.diets);
+    const dietType = useSelector((state) => state.diets);
     const history = useHistory();
+    // const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({})
 
     const [input, setInput] = useState({
         title: "",
-        image: "",
+        // image: "",
         summary: "",
         spoonacularScore: 0,
         analyzedInstructions: "",
         healthScore: 0,    
         diets : []
     })
+
+    useEffect(() => {
+        dispatch(getDiets());
+    }, [dispatch])
 
     function handleChange (e) {
         setInput({
@@ -30,11 +55,14 @@ export default function RecipeCreate() {
             ...input,
             diets: [...input.diets, e.target.value]
         })
+        setErrors(validate({
+            ...input,
+            [e.target.name]: e.target.value,
+        }))
     }
 
     function handleSubmit (e) {
         e.preventDefault();
-        console.log(input)
         dispatch(postRecipe(input));
         alert("Receta creada!")
         setInput({
@@ -49,9 +77,13 @@ export default function RecipeCreate() {
         history.push('/home')
     }
 
-    useEffect(() => {
-        dispatch(getDiets());
-    }, [dispatch])
+    function handleDelete (e) {
+        setInput({
+            ...input,
+            diets: input.diets.filter(diet => diet !== e)
+        })
+    }
+
 
     return (
         <div>
@@ -63,6 +95,8 @@ export default function RecipeCreate() {
                 <div>
                     <label>Nombre de la receta:</label>
                     <input type='text' name='title' value={input.title} onChange={(e)=>handleChange(e)}/>
+                    {/* {errors.name && <p> {errors.title}</p>} */}
+                    { errors.title && (<p>{errors.title}</p>)}
                 </div>
 
                 <div>
@@ -73,21 +107,25 @@ export default function RecipeCreate() {
                 <div>
                     <label>Resumen de la receta:</label>
                     <input type="text" value={input.summary} name="summary" onChange={(e) =>handleChange(e)} />
+                    {errors.summary && <p> {errors.summary}</p>}
                 </div>
 
                 <div>
                     <label>Nivel de comida saludable:</label>
                     <input type="number" value={input.spoonacularScore} name="spoonacularScore" onChange={(e) =>handleChange(e)} />
+                    {errors.spoonacularScore && <p> {errors.spoonacularScore}</p>}
                 </div>
 
                 <div>
                     <label>Instrucciones de la receta:</label>
                     <input type="text" value={input.analyzedInstructions} name="analyzedInstructions" onChange={(e) =>handleChange(e)} />
+                    {errors.analyzedInstructions && <p> {errors.analyzedInstructions}</p>}
                 </div>
 
                 <div>
                     <label>Puntaje de la receta:</label>
                     <input type="number" value={input.healthScore} name="healthScore" onChange={(e) =>handleChange(e)} />
+                    {errors.healthScore && <p> {errors.healthScore}</p>}
                 </div>
 
                 <select onChange={(e) => handleSelect(e)}>
@@ -96,13 +134,18 @@ export default function RecipeCreate() {
                         <option key={d.name} value={d.name}>{d.name}</option>
                 ))}
                 </select>
+                {errors.diets && <p> {errors.diets}</p>}
                 <ul>
                     <li>{input.diets.map(e => e + " ,")}</li>
                 </ul>
 
                 <button type="submit">Crear receta</button>
-
             </form>
+            {input.diets.map(e =>
+                <div>
+                    <p>{e}</p>
+                    <button onClick={() => handleDelete(e)}>X</button>
+                </div>)}
             
         </div>
     )

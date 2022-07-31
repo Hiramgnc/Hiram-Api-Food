@@ -13,7 +13,7 @@ import React from 'react';
 
 
 
-function Card({title, diets,image}) {
+export default function Card({title, diets,image}) {
     return (
         <div>
         {/* <img src={image} alt="Img not found"/> */}
@@ -24,5 +24,3 @@ function Card({title, diets,image}) {
         </div>
     </div>
     )}
-
-export default Card;
