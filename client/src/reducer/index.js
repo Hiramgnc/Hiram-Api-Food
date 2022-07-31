@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 
 const inicialState = {
     recipes: [],
@@ -90,17 +91,22 @@ function roodReducer(state = inicialState, action) {
                         recipes: sortedArr2
                     };
 
-        //Dietas
+        //Filtro de dietas
         case 'FILTER_BY_DIETS':
-            const allRecipe = state.allRecipes;
-            const dietsFilter = action.payload === 'all' ? allRecipe : 
-            allRecipe.filter(e => e.status === action.payload);
+            const dietsFilter = action.payload === 'All' ? state.allRecipes :
+            state.allRecipes.filter(rec => rec.diets.find(die => {
+                if(die.name === action.payload) {
+                    return rec
+                }
+            }))
 
+            if(!dietsFilter.length > 0) {
+                alert('No existen recetas de ' + action.payload)
+            }
             return {
                 ...state,
                 recipes: dietsFilter
             }
-
 
         case 'GET_DETAIL':
             return {
