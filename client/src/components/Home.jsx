@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRecipes, orderByName, orderByScore, filterByDiets } from '../actions';
+import { getRecipes, orderByName, orderByScore, filterByDiets, filterCreatedInDb } from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 import Paginate from './Paginate';
 import SearchBar from './SearchBar';
+import styles from './Home.module.css';
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -46,19 +47,22 @@ export default function Home() {
         setOrden(`Ordenado ${e.target.value}`);
     }
 
-    //dietas
-    // function handleFilterDiet (e) {
-    //     dispatch(filterByDiets(e.target.value));
-    // }
-
+    //Filtrado por dietas
     function handleFilterDiet(e) {
         dispatch(filterByDiets(e.target.value))
         setOrden(`ordenado ${e.target.value}`);
         setCurrentPage(1);
     }
 
+    //Filtrado por creados en Db
+    function handleFilterCreatedInDb(e) {
+        dispatch(filterCreatedInDb(e.target.value))
+        setOrden(`ordenado ${e.target.value}`);
+        setCurrentPage(1);
+    }
+
     return (
-        <div>
+        <div className={styles.background}>
             <Link to="/recipe"><button>Crear receta</button></Link>
 
             <h1>Hiram Food Api</h1>
@@ -97,7 +101,12 @@ export default function Home() {
                     <option value="ketogenic">Ketogenic</option>
                     <option value="fodmap friendly">Fodmap friendly</option>
                     <option value="vegetarian">Vegetarian</option>
-                    <option value="Ketogenic">Ketogenic</option>
+                </select>
+
+                <select onChange={(e)=>{handleFilterCreatedInDb(e)}}>
+                    <option value="All">Todas las recetas</option>
+                    <option value="Creada en Db">Creadas</option>
+                    <option value="Api">Existentes</option>
                 </select>
 
                 <Paginate
@@ -106,23 +115,22 @@ export default function Home() {
                     paginate={paginate}
                 />
 
-                {/* SearchBar */}
                 <SearchBar />
 
                 <div>
                 {
                     currentRecipes?.map((e) => {
                         return (
-                            <Link to={ `/home/` + e.id }>
+                            <Link to={ `/home/` + e.id } >
                                 <Card
-                                    image={e.image}
                                     title={e.title}
                                     diets={e.diets.map(recipe => (<p >{recipe.name}</p>))}
+                                    image={e.image}
                                     key={e.id}
                                 />
                             </Link>
                         )
-                    })
+                    }) 
                 }
 
                 </div>    

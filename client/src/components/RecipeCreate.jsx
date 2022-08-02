@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { postRecipe, getDiets } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
+import styles from './RecipeCreate.module.css';
 
 function validate(input) {
     let errors = {};
@@ -87,42 +88,42 @@ export default function RecipeCreate() {
 
     return (
         <div>
-            <Link to="/home"><button>Volver</button></Link>
-            <h1>Crea tu receta</h1>
+            <Link to="/home"><button className={styles.btnVol}>Volver</button></Link>
 
-            <form onSubmit={(e) => handleSubmit(e)} >
+            <form className={styles.container} onSubmit={(e) => handleSubmit(e)} >
+                <h1>Crea tu receta</h1>
 
-                <div>
+                <div className={styles.box}>
                     <label>Nombre de la receta:</label>
                     <input type='text' name='title' value={input.title} onChange={(e)=>handleChange(e)}/>
                     {/* {errors.name && <p> {errors.title}</p>} */}
                     { errors.title && (<p>{errors.title}</p>)}
                 </div>
 
-                <div>
+                <div className={styles.box}>
                     <label>Imagen de la receta:</label>
                     <input type="text" value={input.image} name="image" onChange={(e) =>handleChange(e)} />
                 </div>
 
-                <div>
+                <div className={styles.box}>
                     <label>Resumen de la receta:</label>
                     <input type="text" value={input.summary} name="summary" onChange={(e) =>handleChange(e)} />
                     {errors.summary && <p> {errors.summary}</p>}
                 </div>
 
-                <div>
+                <div className={styles.box}>
                     <label>Nivel de comida saludable:</label>
                     <input type="number" value={input.spoonacularScore} name="spoonacularScore" onChange={(e) =>handleChange(e)} />
                     {errors.spoonacularScore && <p> {errors.spoonacularScore}</p>}
                 </div>
 
-                <div>
+                <div className={styles.box}>
                     <label>Instrucciones de la receta:</label>
                     <input type="text" value={input.analyzedInstructions} name="analyzedInstructions" onChange={(e) =>handleChange(e)} />
                     {errors.analyzedInstructions && <p> {errors.analyzedInstructions}</p>}
                 </div>
 
-                <div>
+                <div className={styles.box}>
                     <label>Puntaje de la receta:</label>
                     <input type="number" value={input.healthScore} name="healthScore" onChange={(e) =>handleChange(e)} />
                     {errors.healthScore && <p> {errors.healthScore}</p>}
@@ -139,7 +140,7 @@ export default function RecipeCreate() {
                     <li>{input.diets.map(e => e + " ,")}</li>
                 </ul>
 
-                <button type="submit">Crear receta</button>
+                <button className={styles.btnCr} type="submit">Crear receta</button>
             </form>
             {input.diets.map(e =>
                 <div>

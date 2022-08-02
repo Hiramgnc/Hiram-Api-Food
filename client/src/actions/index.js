@@ -43,7 +43,6 @@ export function getDiets () {
 export function postRecipe (payload) {
     return async function (dispatch) {
         const response = await axios.post("http://localhost:3001/recipe", payload);
-        console.log(response);
         return response;
     }
 }
@@ -66,10 +65,18 @@ export function orderByScore (payload) {
     }
 }
 
-//Dietas
+//Filtrado dietas
 export function filterByDiets(payload){
     return {
         type: 'FILTER_BY_DIETS',
+        payload
+    }
+}
+
+//Filtrado creado en db
+export function filterCreatedInDb(payload){
+    return{
+        type: 'FILTER_CREATED_IN_DB',
         payload
     }
 }

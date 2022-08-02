@@ -108,6 +108,24 @@ function roodReducer(state = inicialState, action) {
                 recipes: dietsFilter
             }
 
+        //Filtrado creado en db
+        case 'FILTER_CREATED_IN_DB':
+            let dbFilter = [];
+            if( action.payload === 'All'){
+                dbFilter = state.allRecipes;
+                
+            } else if( action.payload === 'Creada en Db'){
+                dbFilter = state.allRecipes.filter( e => e.MadeInDb);
+
+            } else if( action.payload === 'Api'){
+                dbFilter = state.allRecipes.filter( e => !e.MadeInDb);
+                
+            }
+            return{
+                ...state,
+                recipes: dbFilter
+            }
+
         case 'GET_DETAIL':
             return {
                 ...state,

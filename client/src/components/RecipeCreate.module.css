@@ -1,0 +1,73 @@
+body {
+    background: url(https://i.postimg.cc/HkdbLsjV/vegetables-3193196.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    text-align: left;
+}
+
+.container h1 {
+    font-size: 40px;
+    border-bottom: 5px solid #fff;
+    margin-bottom: 15px;
+    /* padding: 13px 0px; */
+}
+
+.box {
+    width: 100%;
+    margin: 22px 0px;
+    border-bottom: 2px solid #fff;
+}
+
+.box input {
+    background: none;
+    width: 75%;
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.btnCr {
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin: 12px 0px;
+    padding: 10px 21px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    background: none;
+    font-weight: bold;
+}
+
+.btnCr:hover {
+    opacity: 0.5;
+    color: gray;
+    background: #fff;
+}
+
+.btnVol {
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin: 12px 0px;
+    padding: 10px 21px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    background: none;
+    font-weight: bold;
+}
+
+.btnVol:hover {
+    opacity: 0.5;
+    color: gray;
+    background: #fff;
+}
