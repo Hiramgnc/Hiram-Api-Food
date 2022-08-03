@@ -1,4 +1,108 @@
 .background {
     background: url(https://i.postimg.cc/pTb85DBY/turmeric-2879382.jpg) no-repeat center center fixed;
     background-size: cover;
+    padding: 10px;
+    margin: 0  auto;
+    justify-content: center;
+    font-family: 'Archivo Black';
+    opacity: none;
+    margin-bottom: 100px;
+}
+
+.head {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: linear-gradient(to top, rgba(11, 27, 13, 0.651) 0%, rgba(39, 38, 38, 0.699) 100%);
+    margin-bottom: 20px;
+}
+
+.title{
+    text-transform: uppercase;
+    font-size: 40px;
+    border: 4px double yellow;
+    border-width: 4px 0;
+    color: yellow;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vh;   
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+} 
+
+.select{
+    background: lightsteelblue;
+    cursor: pointer;
+    display:inline-block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Bahnschrift SemiCondensed';
+    font-size: 18px;
+    color: black;
+    padding: 3px;
+    border-radius: 4px;
+    border-style: groove;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.button {
+	background-color:rgb(241, 241, 28);
+	border-radius:8px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+    font: 700 4em/1 "Oswald", sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+
+.button:hover {
+    color: yellow;
+    background-color: #1A1A1A;
+    border-radius:8px;
+	border:1px solid yellow;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Archivo Black';
+    font-size: 21px;
+    text-transform: capitalize;  
+}
+
+.recipe {    
+    margin: 10px;
+    float: left;
+    text-decoration: none;
+    opacity: none;  
+}
+
+
+.search{
+    display: flex;
+    justify-content: center;
+    margin-left: 50%;
 }

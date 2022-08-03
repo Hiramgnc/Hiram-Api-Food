@@ -14,9 +14,9 @@
 }
 
 .button {
-	background-color:rgb(241, 241, 28);
+	background-color:rgb(161, 159, 159);
 	border-radius:8px;
-	border:1px solid black;
+	border:2px solid black;
 	display:inline-block;
 	cursor:pointer;
 	color:black;
@@ -28,10 +28,10 @@
 }
 
 .button:hover {
-    color: yellow;
-    background-color: #1A1A1A;
+    color: black;
+    background-color: white;
     border-radius:8px;
-	border:1px solid yellow;
+	border:2px solid gray;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }

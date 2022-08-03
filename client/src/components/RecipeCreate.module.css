@@ -4,18 +4,17 @@ body {
 }
 
 .container {
-    color: #fff;
+    color: yellow;
     position: absolute;
-    top: 10%;
-    left: 40%;
-    text-align: left;
+    top: 5%;
+    left: 32%;
+    text-align: center;
 }
 
 .container h1 {
     font-size: 40px;
     border-bottom: 5px solid #fff;
     margin-bottom: 15px;
-    /* padding: 13px 0px; */
 }
 
 .box {
@@ -71,3 +70,50 @@ body {
     color: gray;
     background: #fff;
 }
+
+.err {
+    color: red;
+    font-size: 18px;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.buttonDelete {
+    float: right;
+    background-color: transparent;
+    border: 2px solid #47444a;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #d3c9f8;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    outline: none;
+    padding: 0 10px;
+    text-align: center;
+    text-indent:none;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 30px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    opacity:none;
+}
+
+.buttonDelete:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+    
+.buttonDelete:active {
+    box-shadow: none;
+    transform: translateY(0);
+}  

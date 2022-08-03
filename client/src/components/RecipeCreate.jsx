@@ -4,23 +4,40 @@ import { postRecipe, getDiets } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './RecipeCreate.module.css';
 
+// function validate(input) {
+//     let errors = {};
+
+//     if(!input.title) {
+//     errors.title= 'Debe ingresar el nombre de la Receta'
+//     } else if 
+//     (!input.summary) {
+//         errors.summary= 'Debe ingresar el resumen de la Receta'
+//     } else if (!input.spoonacularScore<0 || input.spoonacularScore>100){
+//         errors.spoonacularScore= 'El puntaje asignado debe estar entre 0 y 100'
+//     } else if(!input.analyzedInstructions) {
+//         errors.analyzedInstructions= 'Debe ingresar los pasos de la Receta'
+//     } else if (!input.healthScore<0 || input.healthScore>100) {
+//         errors.healthScore= 'El puntaje asignado debe estar entre 0 y 100'
+//     } 
+    
+//     return errors
+// }
 function validate(input) {
     let errors = {};
-
-    if(!input.title) {
-    errors.title= 'Debe ingresar el nombre de la Receta'
-    } else if 
-    (!input.summary) {
-        errors.summary= 'Debe ingresar el resumen de la Receta'
-    } else if (!input.spoonacularScore<0 || input.spoonacularScore>100){
-        errors.spoonacularScore= 'El puntaje asignado debe estar entre 0 y 100'
-    } else if(!input.analyzedInstructions) {
-        errors.analyzedInstructions= 'Debe ingresar los pasos de la Receta'
-    } else if (!input.healthScore<0 || input.healthScore>100) {
-        errors.healthScore= 'El puntaje asignado debe estar entre 0 y 100'
-    } 
-    
-    return errors
+    if (!input.title  || /[@!#$%&/0-9]/g.test(input.title)) {
+        errors.title  = "Se requiere un nombre válido (no debe tener símbolos o números)";
+    } else if (!input.summary) {
+        errors.summary = "Se requiere un resumen";
+    } else if (input.spoonacularScore > 100 || input.spoonacularScore <= 0) {
+        errors.spoonacularScore = "La puntuación tiene que ser inferior a 100 y mayor que 0.";
+    } else if (input.healthScore > 100  || input.healthScore <= 0) {
+        errors.healthScore = "La puntuación de salud tiene que ser inferior a 100 y mayor que 0.";
+    } else if (!input.analyzedInstructions) {
+        errors.analyzedInstructions = "Los pasos son obligatorios";
+    } else if (input.diets.length === 0) {
+        errors.diets = "Selecciona al menos un tipo de dieta";
+    }
+    return errors;
 }
 
 export default function RecipeCreate() {
@@ -97,7 +114,7 @@ export default function RecipeCreate() {
                     <label>Nombre de la receta:</label>
                     <input type='text' name='title' value={input.title} onChange={(e)=>handleChange(e)}/>
                     {/* {errors.name && <p> {errors.title}</p>} */}
-                    { errors.title && (<p>{errors.title}</p>)}
+                    { errors.title && (<p className={styles.err}>{errors.title}</p>)}
                 </div>
 
                 <div className={styles.box}>
@@ -108,25 +125,25 @@ export default function RecipeCreate() {
                 <div className={styles.box}>
                     <label>Resumen de la receta:</label>
                     <input type="text" value={input.summary} name="summary" onChange={(e) =>handleChange(e)} />
-                    {errors.summary && <p> {errors.summary}</p>}
+                    {errors.summary && <p className={styles.err}> {errors.summary}</p>}
                 </div>
 
                 <div className={styles.box}>
                     <label>Nivel de comida saludable:</label>
                     <input type="number" value={input.spoonacularScore} name="spoonacularScore" onChange={(e) =>handleChange(e)} />
-                    {errors.spoonacularScore && <p> {errors.spoonacularScore}</p>}
+                    {errors.spoonacularScore && <p className={styles.err}> {errors.spoonacularScore}</p>}
                 </div>
 
                 <div className={styles.box}>
                     <label>Instrucciones de la receta:</label>
                     <input type="text" value={input.analyzedInstructions} name="analyzedInstructions" onChange={(e) =>handleChange(e)} />
-                    {errors.analyzedInstructions && <p> {errors.analyzedInstructions}</p>}
+                    {errors.analyzedInstructions && <p className={styles.err}> {errors.analyzedInstructions}</p>}
                 </div>
 
                 <div className={styles.box}>
                     <label>Puntaje de la receta:</label>
                     <input type="number" value={input.healthScore} name="healthScore" onChange={(e) =>handleChange(e)} />
-                    {errors.healthScore && <p> {errors.healthScore}</p>}
+                    {errors.healthScore && <p className={styles.err}> {errors.healthScore}</p>}
                 </div>
 
                 <select onChange={(e) => handleSelect(e)}>
@@ -135,7 +152,7 @@ export default function RecipeCreate() {
                         <option key={d.name} value={d.name}>{d.name}</option>
                 ))}
                 </select>
-                {errors.diets && <p> {errors.diets}</p>}
+                {errors.diets && <p className={styles.err}> {errors.diets}</p>}
                 <ul>
                     <li>{input.diets.map(e => e + " ,")}</li>
                 </ul>
@@ -145,7 +162,7 @@ export default function RecipeCreate() {
             {input.diets.map(e =>
                 <div>
                     <p>{e}</p>
-                    <button onClick={() => handleDelete(e)}>X</button>
+                    <button className={styles.buttonDelete} onClick={() => handleDelete(e)}>X</button>
                 </div>)}
             
         </div>

@@ -63,32 +63,34 @@ export default function Home() {
 
     return (
         <div className={styles.background}>
-            <Link to="/recipe"><button>Crear receta</button></Link>
+            <div className={styles.head}>
+                <Link className={styles.button} to="/recipe">Crear receta</Link>
+                <SearchBar className={styles.search} />
+                <div>
+                    <h1>Encontra recetas ideales para vos</h1>
+                </div>
+            </div>
 
-            <h1>Hiram Food Api</h1>
-            <button onClick = {e => {handleClick(e)}}>
-                Volver a Recetas
-            </button>
 
             {/* Filtros */}
-            <div>
-
+            <div className={styles.bordercont}>
+                
                 {/* Opciones para ordenar tanto ascendentemente como descendentemente las recetas por orden alfabético */}
-                <select onChange={e => handleSortName(e)}>
+                <select className={styles.select} onChange={e => handleSortName(e)}>
                     <option value="vacio">Ordenar</option>
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>
 
                 {/* Opciones para ordenar por health score (nivel de comida saludable) */}
-                <select onChange={e => handleSortScore(e)}>
+                <select className={styles.select} onChange={e => handleSortScore(e)}>
                     <option value="vacio">Puntuación</option>
                     <option value="high"> Más alta </option>
                     <option value="low"> Más baja </option>
                 </select>
 
                 {/* Opciones para filtrar por por tipo de dieta */}
-                <select onChange={e => handleFilterDiet(e)}>
+                <select className={styles.select} onChange={e => handleFilterDiet(e)}>
                     <option value="all">Tipo de dieta</option>
                     <option value="gluten free">Gluten free</option>
                     <option value="dairy free">Dairy free</option>
@@ -103,11 +105,15 @@ export default function Home() {
                     <option value="vegetarian">Vegetarian</option>
                 </select>
 
-                <select onChange={(e)=>{handleFilterCreatedInDb(e)}}>
+                <select className={styles.select} onChange={(e)=>{handleFilterCreatedInDb(e)}}>
                     <option value="All">Todas las recetas</option>
                     <option value="Creada en Db">Creadas</option>
                     <option value="Api">Existentes</option>
                 </select>
+
+                <button className={styles.button} onClick = {e => {handleClick(e)}}>
+                    Volver a Recetas
+                </button>
 
                 <Paginate
                     recipesPerPage={recipesPerPage}
@@ -115,13 +121,12 @@ export default function Home() {
                     paginate={paginate}
                 />
 
-                <SearchBar />
 
-                <div>
+                <div className={styles.cards}>
                 {
                     currentRecipes?.map((e) => {
                         return (
-                            <Link to={ `/home/` + e.id } >
+                            <Link className={styles.recipe} to={ `/home/` + e.id } >
                                 <Card
                                     title={e.title}
                                     diets={e.diets.map(recipe => (<p >{recipe.name}</p>))}
@@ -133,7 +138,14 @@ export default function Home() {
                     }) 
                 }
 
-                </div>    
+                </div>  
+
+                <Paginate
+                    recipesPerPage={recipesPerPage}
+                    allRecipes={allRecipes.length}
+                    paginate={paginate}
+                />
+                
             </div>
         </div>
     )
