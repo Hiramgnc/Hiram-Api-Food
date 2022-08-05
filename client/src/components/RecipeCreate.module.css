@@ -1,19 +1,30 @@
-body {
-    background: url(https://i.postimg.cc/HkdbLsjV/vegetables-3193196.jpg) no-repeat center center fixed;
+.background {
+    background: url(https://i.postimg.cc/HkdbLsjV/vegetables-3193196.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position:fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
 }
 
 .container {
-    color: yellow;
+    color: burlywood;
     position: absolute;
     top: 5%;
     left: 32%;
     text-align: center;
 }
 
-.container h1 {
+.title {
+    color: burlywood;
     font-size: 40px;
-    border-bottom: 5px solid #fff;
     margin-bottom: 15px;
 }
 
@@ -34,12 +45,12 @@ body {
 }
 
 .btnCr {
-    color: #fff;
+    color: burlywood;
     cursor: pointer;
     outline: none;
     margin: 12px 0px;
     padding: 10px 21px;
-    border: 2px solid #fff;
+    border: 2px solid burlywood;
     border-radius: 10px;
     font-size: 18px;
     background: none;
@@ -53,12 +64,12 @@ body {
 }
 
 .btnVol {
-    color: #fff;
+    color: burlywood;
     cursor: pointer;
     outline: none;
     margin: 12px 0px;
     padding: 10px 21px;
-    border: 2px solid #fff;
+    border: 2px solid burlywood;
     border-radius: 10px;
     font-size: 18px;
     background: none;
@@ -78,42 +89,39 @@ body {
 }
 
 .buttonDelete {
-    float: right;
-    background-color: transparent;
-    border: 2px solid #47444a;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #d3c9f8;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: normal;
-    outline: none;
-    padding: 0 10px;
-    text-align: center;
-    text-indent:none;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 30px;
-    height: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    opacity:none;
+    background-color: red;
+    color: white;
 }
 
-.buttonDelete:hover {
-    color: #fff;
-    background-color: #1A1A1A;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
+.dietDelete{
+    text-transform: capitalize;
+    background-color:rgb(114, 163, 153) ;
+    border-radius: 5px;
+    padding: 0.8px;
+    box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
+    font-family: 'Bahnschrift SemiCondensed';
+    display: inline-block;
+    flex-direction: row;
 }
-    
-.buttonDelete:active {
-    box-shadow: none;
-    transform: translateY(0);
-}  
+
+.select{
+    background: burlywood;
+    cursor: pointer;
+    display:inline-block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Bahnschrift SemiCondensed';
+    font-size: 18px;
+    color: black;
+    padding: 3px;
+    border-radius: 4px;
+    border-style: groove;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+li {
+    list-style-type: none;
+}

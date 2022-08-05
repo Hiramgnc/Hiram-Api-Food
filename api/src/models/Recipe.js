@@ -29,21 +29,8 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-    //Puntuacion = spooncularScore 
-    spoonacularScore: {
-      type: DataTypes.INTEGER,
-      validate: {
-        min:0,
-        max: 100
-      }
-    },
 
-    // //Paso a paso = steps (que esta dentro de un arreglo (analized instructions)  => que contiene objetos )
-    // steps: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
-
+    //Paso a paso = steps (que esta dentro de un arreglo (analized instructions)  => que contiene objetos )
     analyzedInstructions: {
       type: DataTypes.TEXT,
       allowNull: true,

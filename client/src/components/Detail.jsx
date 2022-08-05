@@ -7,11 +7,6 @@ import styles from './Detail.module.css';
 
 export default function Detail(props) {
     const dispatch = useDispatch();
-    // const id = useParams();
-
-    // useEffect(() => {
-    //     dispatch(getDetail(id));
-    // }, [dispatch, id]);
     useEffect(() => {
         dispatch(getDetail(props.match.params.id));
     },[dispatch, props.match.params.id]);
@@ -22,16 +17,29 @@ export default function Detail(props) {
         <div className={styles.background}>
             {
                 myRecipe.length > 0 ?
-                    <div>
-                        <h1>{myRecipe[0].title}</h1>
-                        <img src={myRecipe[0].image} alt={myRecipe[0].title} />
-                        <h3>{myRecipe[0].summary}</h3>
-                        <p>{myRecipe[0].spoonacularScore}</p>
-                        <p>{myRecipe[0].healthScore}</p>
-                        <h4>{myRecipe[0].diets.map(el => el.name + (', '))}</h4>
-                    </div> : <div>Cargando...</div>
+                    <div className={styles.container}>
+                        <h1 className={styles.title}>{myRecipe[0].title}</h1>
+
+                        <img className={styles.image} src={myRecipe[0].image} alt={myRecipe[0].title} />
+
+                        <h5 className={styles.titles}>RESUMEN DEL PLATO</h5>
+                        {/* <p className={styles.summary}>{myRecipe[0].summary}</p> */}
+                        <p className={styles.summary}>{myRecipe[0].summary.replace(/<[^>]*>?/g, "")}</p>
+
+                        <h5 className={styles.titles}>PUNTAJE DE COMIDA SALUDABLE:</h5>
+                        <p className={styles.score}>{myRecipe[0].healthScore}</p>
+
+                        <h5 className={styles.titles}>TIPO DE PLATO:</h5>
+                        <p className={styles.dishTypes}>{myRecipe[0].dishTypes ? myRecipe[0].dishTypes.map(d => d.name) :'Tipo de Plato no encontrado'}</p>
+
+                        <h5 className={styles.titles}>PASO A PASO:</h5>
+                        <p className={styles.analyzedInstructions}>{ myRecipe[0].analyzedInstructions}</p>
+
+                        <h5 className={styles.titles}>TIPO DE DIETA:</h5>
+                        <h4 className={styles.diets}>{myRecipe[0].diets.map(el => el.name + (', '))}</h4>
+                    </div> : <img src="https://i.gifer.com/ZKZg.gif" alt="loading" />
             }
-            <Link to="/home"><button>Volver</button></Link>
+            <Link to="/home"><button className={styles.button}>Volver</button></Link>
         </div>
     )    
 }

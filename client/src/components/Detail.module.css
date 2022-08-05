@@ -1,4 +1,96 @@
 .background {
-    background: url(https://i.postimg.cc/hv7dVNHT/table-2777180.jpg) no-repeat center center fixed;
+    background: url(https://i.postimg.cc/hv7dVNHT/table-2777180.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position:fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    color: burlywood;
+    position: absolute;
+    top: 8%;
+    text-align: center;
+}
+
+.image{
+    max-width: 750px;
+    max-height: 750px;
+    border-radius: 15px;
+    opacity: 90%;
+}
+
+.title{
+    color: red;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    font-size: 25px;
+}
+
+.titles{
+    font-size: 20px;
+    color:red;
+    margin-bottom: 5px;
+    font-family: "Oswald", sans-serif;
+}
+
+.summary {
+    font-size: 20px;
+    color:red;
+    margin-bottom: 5px;
+    font-family: "Oswald", sans-serif;
+}
+
+.score {
+    color: red;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+}
+
+.dishTypes {
+    text-transform: capitalize;
+    color: red;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+}
+
+.analyzedInstructions {
+    color: red;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+}
+
+.diets {
+    text-transform: capitalize;
+    color: red;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+}
+
+
+.button {
+    color: burlywood;
+    cursor: pointer;
+    outline: none;
+    margin: 12px 0px;
+    padding: 10px 21px;
+    border: 2px solid burlywood;
+    border-radius: 10px;
+    font-size: 18px;
+    background: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    opacity: 0.5;
+    color: gray;
+    background: #fff;
 }

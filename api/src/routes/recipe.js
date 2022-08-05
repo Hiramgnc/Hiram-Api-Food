@@ -14,12 +14,10 @@ const getApiInfo = async () => {
             id: e.id,
             title: e.title,
             image: e.image,
-            // name: e.title,
             summary: e.summary,
-            spoonacularScore: e.spoonacularScore,
-            // //Steps (Esta dentro de un arreglo[] (analized instructions)  => que contiene objetos )
-            // steps: e.analyzedInstructions[0]?.steps.map((e) => {return e.step}),
-            analyzedInstructions: e.analyzedInstructions,
+            dishTypes: e.dishTypes.map((d) => {return{name:d}}),
+            //Steps (Esta dentro de un arreglo[] (analized instructions)  => que contiene objetos )
+            analyzedInstructions: (e.analyzedInstructions[0] && e.analyzedInstructions[0].steps?e.analyzedInstructions[0].steps.map(s=>s.step).join(""):''),
             healthScore: e.healthScore,
             diets: e.diets.map( (e) => {return {name: e}}),
         }

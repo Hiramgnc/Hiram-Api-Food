@@ -40,6 +40,7 @@ function validate(input) {
     return errors;
 }
 
+
 export default function RecipeCreate() {
     const dispatch = useDispatch();
     const dietType = useSelector((state) => state.diets);
@@ -104,11 +105,10 @@ export default function RecipeCreate() {
 
 
     return (
-        <div>
+        <div className={styles.background}>
             <Link to="/home"><button className={styles.btnVol}>Volver</button></Link>
-
+            <h1 className={styles.title}>Crea tu receta</h1>
             <form className={styles.container} onSubmit={(e) => handleSubmit(e)} >
-                <h1>Crea tu receta</h1>
 
                 <div className={styles.box}>
                     <label>Nombre de la receta:</label>
@@ -135,18 +135,12 @@ export default function RecipeCreate() {
                 </div>
 
                 <div className={styles.box}>
-                    <label>Instrucciones de la receta:</label>
+                    <label>Paso a Paso:</label>
                     <input type="text" value={input.analyzedInstructions} name="analyzedInstructions" onChange={(e) =>handleChange(e)} />
                     {errors.analyzedInstructions && <p className={styles.err}> {errors.analyzedInstructions}</p>}
                 </div>
 
-                <div className={styles.box}>
-                    <label>Puntaje de la receta:</label>
-                    <input type="number" value={input.healthScore} name="healthScore" onChange={(e) =>handleChange(e)} />
-                    {errors.healthScore && <p className={styles.err}> {errors.healthScore}</p>}
-                </div>
-
-                <select onChange={(e) => handleSelect(e)}>
+                <select className={styles.select} onChange={(e) => handleSelect(e)}>
                 <option>Seleccione el tipo de Dieta</option>
                     {dietType?.map((d) => (
                         <option key={d.name} value={d.name}>{d.name}</option>
@@ -161,7 +155,7 @@ export default function RecipeCreate() {
             </form>
             {input.diets.map(e =>
                 <div>
-                    <p>{e}</p>
+                    <p className={styles.dietDelete}>{e}</p>
                     <button className={styles.buttonDelete} onClick={() => handleDelete(e)}>X</button>
                 </div>)}
             

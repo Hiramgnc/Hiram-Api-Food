@@ -69,6 +69,7 @@ export default function Home() {
                 <div>
                     <h1>Encontra recetas ideales para vos</h1>
                 </div>
+                
             </div>
 
 

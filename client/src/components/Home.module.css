@@ -1,12 +1,11 @@
 .background {
-    background: url(https://i.postimg.cc/pTb85DBY/turmeric-2879382.jpg) no-repeat center center fixed;
+    background: url(https://i.postimg.cc/pTb85DBY/turmeric-2879382.jpg);
     background-size: cover;
     padding: 10px;
     margin: 0  auto;
     justify-content: center;
     font-family: 'Archivo Black';
     opacity: none;
-    margin-bottom: 100px;
 }
 
 .head {
@@ -30,7 +29,6 @@
     display: flex;
     min-height: 100vh;
     min-width: 100vh;   
-
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
