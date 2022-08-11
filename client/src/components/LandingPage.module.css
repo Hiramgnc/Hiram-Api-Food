@@ -15,6 +15,7 @@
 .title {
     color: #fff;
     font-size: 20px;
+    text-shadow: 0 0 10px black;
 	text-transform: uppercase;
 	letter-spacing: .5em;
 	display: inline-block;
@@ -30,17 +31,17 @@
 
 .span {
     color: yellow;
+    text-shadow: 0 0 10px black;
     font: 700 4em/1 "Oswald", sans-serif;
     letter-spacing: 0;
     padding: .25em 0 .325em;
     display: block;
     margin: 0 auto;
-    text-shadow: 0 0 80px yellow;
 }
 
 .button {
 	background-color:rgb(241, 241, 28);
-    margin-top: 200px;
+    margin-top: 250px;
 	border-radius:8px;
 	border:1px solid black;
 	display:inline-block;

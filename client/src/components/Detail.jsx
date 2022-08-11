@@ -23,17 +23,16 @@ export default function Detail(props) {
                         <img className={styles.image} src={myRecipe[0].image} alt={myRecipe[0].title} />
 
                         <h5 className={styles.titles}>RESUMEN DEL PLATO</h5>
-                        {/* <p className={styles.summary}>{myRecipe[0].summary}</p> */}
-                        <p className={styles.summary}>{myRecipe[0].summary.replace(/<[^>]*>?/g, "")}</p>
+                        <p className={styles.text}>{myRecipe[0].summary.replace(/<[^>]*>?/g, "")}</p>
 
                         <h5 className={styles.titles}>PUNTAJE DE COMIDA SALUDABLE:</h5>
-                        <p className={styles.score}>{myRecipe[0].healthScore}</p>
+                        <p className={styles.txt}>{myRecipe[0].healthScore}</p>
 
                         <h5 className={styles.titles}>TIPO DE PLATO:</h5>
-                        <p className={styles.dishTypes}>{myRecipe[0].dishTypes ? myRecipe[0].dishTypes.map(d => d.name) :'Tipo de Plato no encontrado'}</p>
+                        <p className={styles.txt}>{myRecipe[0].dishTypes ? myRecipe[0].dishTypes.map(d => d.name) :'Tipo de Plato no encontrado'}</p>
 
                         <h5 className={styles.titles}>PASO A PASO:</h5>
-                        <p className={styles.analyzedInstructions}>{ myRecipe[0].analyzedInstructions}</p>
+                        <p className={styles.text}>{ myRecipe[0].analyzedInstructions}</p>
 
                         <h5 className={styles.titles}>TIPO DE DIETA:</h5>
                         <h4 className={styles.diets}>{myRecipe[0].diets.map(el => el.name + (', '))}</h4>

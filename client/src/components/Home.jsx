@@ -66,8 +66,8 @@ export default function Home() {
             <div className={styles.head}>
                 <Link className={styles.button} to="/recipe">Crear receta</Link>
                 <SearchBar className={styles.search} />
-                <div>
-                    <h1>Encontra recetas ideales para vos</h1>
+                <div className={styles.txtHome}>
+                    <h1>Encontra recetas saludables para vos</h1>
                 </div>
                 
             </div>
@@ -106,10 +106,10 @@ export default function Home() {
                     <option value="vegetarian">Vegetarian</option>
                 </select>
 
-                <select className={styles.select} onChange={(e)=>{handleFilterCreatedInDb(e)}}>
+                <select className={styles.select} onChange={e=> handleFilterCreatedInDb(e)}>
                     <option value="All">Todas las recetas</option>
-                    <option value="Creada en Db">Creadas</option>
-                    <option value="Api">Existentes</option>
+                    <option value="created">Creadas</option>
+                    <option value="api">Existentes</option>
                 </select>
 
                 <button className={styles.button} onClick = {e => {handleClick(e)}}>
@@ -135,7 +135,7 @@ export default function Home() {
                                     key={e.id}
                                 />
                             </Link>
-                        )
+                        ) 
                     }) 
                 }
 

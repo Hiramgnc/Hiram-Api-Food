@@ -8,7 +8,7 @@ export default function LandingPage() {
         <div className={styles.background}>
                 <p className={styles.title}> &mdash; Encontra &mdash;
                     <span className={styles.span}>
-                        recetas ideales
+                        recetas saludables
                     </span>
                         &mdash; para vos &mdash;
                 </p>

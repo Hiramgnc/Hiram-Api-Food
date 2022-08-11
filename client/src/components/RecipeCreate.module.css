@@ -16,16 +16,18 @@
 
 .container {
     color: burlywood;
+    font-size: 20px;
     position: absolute;
-    top: 5%;
-    left: 32%;
+    top: 70px;
     text-align: center;
 }
 
 .title {
     color: burlywood;
     font-size: 40px;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
 }
 
 .box {
@@ -36,6 +38,7 @@
 
 .box input {
     background: none;
+    text-align: center;
     width: 75%;
     padding: 5px 10px;
     font-size: 20px;
@@ -44,7 +47,7 @@
     color: #fff;
 }
 
-.btnCr {
+.btnCrear {
     color: burlywood;
     cursor: pointer;
     outline: none;
@@ -57,7 +60,7 @@
     font-weight: bold;
 }
 
-.btnCr:hover {
+.btnCrear:hover {
     opacity: 0.5;
     color: gray;
     background: #fff;
@@ -88,6 +91,13 @@
     -webkit-text-stroke: 0.5px black;
 }
 
+.containerDelete {
+    font-size: 20px;
+    position: absolute;
+    top: 500px;
+    text-align: center;
+}
+
 .buttonDelete {
     background-color: red;
     color: white;
@@ -95,7 +105,7 @@
 
 .dietDelete{
     text-transform: capitalize;
-    background-color:rgb(114, 163, 153) ;
+    background-color:yellow;
     border-radius: 5px;
     padding: 0.8px;
     box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
@@ -106,6 +116,7 @@
 
 .select{
     background: burlywood;
+    text-transform: capitalize;
     cursor: pointer;
     display:inline-block;
     justify-content: center;
@@ -124,4 +135,5 @@
 
 li {
     list-style-type: none;
+    text-transform: capitalize
 }

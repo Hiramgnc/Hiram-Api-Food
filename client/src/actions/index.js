@@ -73,13 +73,6 @@ export function filterByDiets(payload){
     }
 }
 
-//Filtrado creado en db
-export function filterCreatedInDb(payload){
-    return{
-        type: 'FILTER_CREATED_IN_DB',
-        payload
-    }
-}
 
 export function getDetail (id) {
     return async function(dispatch) {
@@ -95,3 +88,12 @@ export function getDetail (id) {
     }
 }
 
+//Filtrado creado en db
+export function filterCreatedInDb(payload){
+    return{
+        type: 'FILTER_CREATED_IN_DB',
+        payload
+    }
+}
+
+// Intento de extras

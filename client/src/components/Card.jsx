@@ -10,6 +10,7 @@ export default function Card({title, diets,image}) {
                     <h2 className={styles.title}>{title}</h2>
                     <p className={styles.diet}>Diets: {diets}</p>
                 </div>
+                <a className ={styles.link} href={`recipe/${title.id}`}>Ver Detalle</a>
             </div>
         </div>
     )

@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "https://cdn.pixabay.com/photo/2017/09/16/19/21/salad-2756467_960_720.jpg"
+      defaultValue: "https://plantillasdememes.com/img/plantillas/imagen-no-disponible01601774755.jpg"
     },
 
     //Resumen del Plato = summary
