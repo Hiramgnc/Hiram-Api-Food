@@ -1,80 +1,85 @@
 .background {
-    background-image: url(https://i.postimg.cc/hv7dVNHT/table-2777180.jpg);
+    background-image: url(https://i.postimg.cc/YCZtbYWp/fondo-comida-italiana-ingredientes-1220-5139.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
+    background-attachment: fixed;
+    padding: 10px;
+    position: absolute;
+}
+
+.contend {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: 30px;
 }
 
 .image{
     max-width: 312px;
     max-height: 231px;
     border-radius: 15px;
-    opacity: 90%;
+    border: 3px solid black;
 }
 
 .title{
-    color: white;
+    color: lightskyblue;
     text-transform: uppercase;
-    font-family: "Oswald", sans-serif;
-    font-size: 40px;
+    font-family: unset;
+    font-size: 35px;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .titles{
     font-size: 20px;
-    color:white;
+    color: yellow;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .text {
     font-size: 20px;
-    color:white;
+    color: azure;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
-    max-width: fit-content;
     text-align: center;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .txt {
     font-size: 20px;
-    color:white;
+    color:azure;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
     text-transform: capitalize;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .diets {
     font-size: 20px;
-    color:white;
+    color: azure;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
     text-transform: capitalize;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .button {
-    color: burlywood;
+    color: black;
     cursor: pointer;
     outline: none;
     margin: 12px 0px;
     padding: 10px 21px;
-    border: 2px solid burlywood;
+    border: 2px solid black;
     border-radius: 10px;
     font-size: 18px;
-    background: none;
+    background: burlywood;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .button:hover {
     opacity: 0.5;
-    color: gray;
-    background: #fff;
+    color: white;
+    background: black;
 }
 

@@ -110,46 +110,20 @@ function roodReducer(state = inicialState, action) {
 
         //Filtrado creado en db
         case "FILTER_CREATED_IN_DB":
-        const createdFilter =
-            action.payload === "created"
-            ? state.allRecipes.filter((e) => e.createdInDb)
-            : state.allRecipes.filter((e) => !e.createdInDb);
+        const createdFilter = action.payload === "created"
+            ? state.allRecipes.filter((e) => e.createdInDB)
+            : state.allRecipes.filter((e) => !e.createdInDB);
         return {
             ...state,
-            recipes: action.payload === "All" ? state.allRecipes : createdFilter,
+            recipes: action.payload === "all" ? state.allRecipes : createdFilter,
         };
-        // case 'FILTER_CREATED_IN_DB':
-        //     let dbFilter = [];
-        //     if( action.payload === 'All'){
-        //         dbFilter = state.allRecipes;
-                
-        //     } else if( action.payload === 'created'){
-        //         dbFilter = state.allRecipes.filter( e => e.createdInDb === true);
-
-        //     } else if( action.payload === 'api'){
-        //         dbFilter = state.allRecipes.filter( e => !e.createdInDb);
-                
-        //     }
-        //     return{
-        //         ...state,
-        //         recipes: dbFilter
-        //     }
-            // const dbFilter = action.payload === 'created' ? 
-            // state.allRecipes.filter(rec => rec.createdInDb) :
-            // state.allRecipes.filter(rec => !rec.createdInDb)
-            // return {
-            //     ...state,
-            //     recipes: action.payload === 'All' ? state.allRecipes : dbFilter
-            // }
+        
 
         case 'GET_DETAIL':
             return {
                 ...state,
                 detail: action.payload
             }
-
-// Intento de extr
-            
 
             default: 
                 return state;

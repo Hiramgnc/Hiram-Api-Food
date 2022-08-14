@@ -107,7 +107,7 @@ export default function Home() {
                 </select>
 
                 <select className={styles.select} onChange={e=> handleFilterCreatedInDb(e)}>
-                    <option value="All">Todas las recetas</option>
+                    <option value="all">Todas las recetas</option>
                     <option value="created">Creadas</option>
                     <option value="api">Existentes</option>
                 </select>
@@ -127,7 +127,7 @@ export default function Home() {
                 {
                     currentRecipes?.map((e) => {
                         return (
-                            <Link className={styles.recipe} to={ `/home/` + e.id } >
+                            <Link className={styles.recipe} key={e.id}to={ `/home/` + e.id } >
                                 <Card
                                     title={e.title}
                                     diets={e.diets.map(recipe => (<p >{recipe.name}</p>))}
@@ -145,6 +145,7 @@ export default function Home() {
                     recipesPerPage={recipesPerPage}
                     allRecipes={allRecipes.length}
                     paginate={paginate}
+                    key={1}
                 />
                 
             </div>

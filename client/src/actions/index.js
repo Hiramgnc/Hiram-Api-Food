@@ -95,5 +95,3 @@ export function filterCreatedInDb(payload){
         payload
     }
 }
-
-// Intento de extras

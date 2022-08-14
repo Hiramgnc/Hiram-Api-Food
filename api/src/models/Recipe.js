@@ -33,13 +33,13 @@ module.exports = (sequelize) => {
     //Paso a paso = steps (que esta dentro de un arreglo (analized instructions)  => que contiene objetos )
     analyzedInstructions: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
 
     //Nivel de "comida saludable" (health score)
     healthScore: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       validate: {
         min: 0,
         max: 100

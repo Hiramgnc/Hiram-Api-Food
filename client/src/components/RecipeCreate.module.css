@@ -3,21 +3,20 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment:fixed;
-    top: 0;
-    bottom: 0;
     right: 0;
     left: 0;
-    position:fixed;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
+    padding: 10px;
+    margin: 0  auto;
+    position: absolute;
 }
 
 .container {
     color: burlywood;
     font-size: 20px;
-    position: absolute;
     top: 70px;
     text-align: center;
 }
@@ -92,26 +91,37 @@
 }
 
 .containerDelete {
-    font-size: 20px;
-    position: absolute;
-    top: 500px;
-    text-align: center;
+    background: burlywood;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-content: flex-start;
+    align-items: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 15px;
+    color: white;
+    font-weight: bolder;
+    width: max-content;
+    justify-content: flex-start;
+    padding: 4px;
+    margin: 5px;
 }
+
 
 .buttonDelete {
-    background-color: red;
+    width: max-content;
+    height: 20px;
+    margin: 3px 6px;
+    border-radius: 100%;
+    border: none;
+    background: red;
     color: white;
+    cursor: pointer;
 }
 
-.dietDelete{
+.dietDelete {   
     text-transform: capitalize;
-    background-color:yellow;
-    border-radius: 5px;
-    padding: 0.8px;
-    box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
-    font-family: 'Bahnschrift SemiCondensed';
-    display: inline-block;
-    flex-direction: row;
+    width: max-content;
+    color: black;
 }
 
 .select{

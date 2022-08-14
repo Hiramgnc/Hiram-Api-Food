@@ -85,7 +85,6 @@ router.post('/', async (req, res) => {
         title, 
         image, 
         summary, 
-        spoonacularScore, 
         analyzedInstructions, 
         healthScore, 
         diets, 
@@ -97,7 +96,6 @@ router.post('/', async (req, res) => {
         title,
         image,
         summary,
-        spoonacularScore,
         analyzedInstructions,
         healthScore,
         createdInDB

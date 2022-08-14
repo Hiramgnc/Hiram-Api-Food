@@ -10,6 +10,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 5px;
+    background-color: rgba(255,255,255, 0.3);
 }
 
 .container .card {
@@ -19,6 +21,7 @@
     border-radius: 20px;
     border: 1px solid black;
     overflow: hidden;
+    padding-bottom: 20px;
 }
 
 .container .card .imgBox {
@@ -45,7 +48,7 @@
     font-size: 15px;
     font-family: 'arial', sans-serif;
     font-weight: bold;
-    color: darkgreen;
+    color: darkred;
 }
 
 .link {
@@ -62,13 +65,9 @@
 .link:hover {
     border-style: none;
     background-color: black;
-    color: white;
+    color: burlywood;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    text-decoration: none;
     border: 3px solid black;
-    padding: 5px 20px;
-    border-radius: 5px;
-    transition: 0.3s;
 }
 
