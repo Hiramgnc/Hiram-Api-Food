@@ -2,14 +2,15 @@
     background-image: url(https://i.postimg.cc/YCZtbYWp/fondo-comida-italiana-ingredientes-1220-5139.jpg);
     background-size: cover;
     background-attachment: fixed;
-    padding: 10px;
+    /* padding: 10px; */
+    width: 100%;
     position: absolute;
 }
 
 .contend {
     flex-direction: column;
     justify-content: space-between;
-    width: 70%;
+    /* width: 70%; */
     margin-left: 30px;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .title{
-    color: lightskyblue;
+    color: yellow;
     text-transform: uppercase;
     font-family: unset;
     font-size: 35px;
@@ -33,12 +34,12 @@
     color: yellow;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
-    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    text-shadow: 4px 0 0 #000, -2px 0 0 #000, 0 4px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .text {
     font-size: 20px;
-    color: azure;
+    color: lavender;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
     text-align: center;
@@ -47,7 +48,7 @@
 
 .txt {
     font-size: 20px;
-    color:azure;
+    color:lavender;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
     text-transform: capitalize;
@@ -56,7 +57,7 @@
 
 .diets {
     font-size: 20px;
-    color: azure;
+    color: lavender;
     margin-bottom: 5px;
     font-family: "Oswald", sans-serif;
     text-transform: capitalize;
@@ -79,7 +80,14 @@
 
 .button:hover {
     opacity: 0.5;
-    color: white;
-    background: black;
+    color: black;
+    background: white;
 }
 
+.loading {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

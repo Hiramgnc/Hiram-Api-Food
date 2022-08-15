@@ -130,7 +130,7 @@ export default function Home() {
                             <Link className={styles.recipe} key={e.id}to={ `/home/` + e.id } >
                                 <Card
                                     title={e.title}
-                                    diets={e.diets.map(recipe => (<p >{recipe.name}</p>))}
+                                    diets={e.diets.map(recipe => (<p key={recipe.name}>{recipe.name}</p>))}
                                     image={e.image}
                                     key={e.id}
                                 />

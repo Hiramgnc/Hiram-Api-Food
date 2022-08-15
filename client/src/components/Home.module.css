@@ -1,10 +1,8 @@
 .background {
     background: url(https://i.postimg.cc/pTb85DBY/turmeric-2879382.jpg);
     background-size: cover;
-    padding: 10px;
-    margin: 0  auto;
-    justify-content: center;
-    opacity: none;
+    background-attachment: fixed;
+    width: 100%;
     position: absolute;
 }
 
@@ -14,7 +12,8 @@
     align-items: center;
     justify-content: space-evenly;
     background-image: linear-gradient(to top, rgba(11, 27, 13, 0.651) 0%, rgba(39, 38, 38, 0.699) 100%);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .txtHome {

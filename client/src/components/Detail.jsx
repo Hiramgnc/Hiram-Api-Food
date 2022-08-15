@@ -38,7 +38,7 @@ export default function Detail(props) {
                         <h5 className={styles.titles}>TIPO DE DIETA:</h5>
                         <h4 className={styles.diets}>{myRecipe[0].diets.map(el => el.name + (', '))}</h4>
                         
-                    </div> : <img src="https://i.gifer.com/ZKZg.gif" alt="loading" />
+                    </div> : <div className={styles.loading}><img src="https://i.gifer.com/ZKZg.gif" alt="loading" /></div>
             }
             <Link to="/home"><button className={styles.button}>Volver</button></Link>
             </div>

@@ -190,7 +190,7 @@ export default function RecipeCreate() {
                     className={styles.select} 
                     onBlur={(e) => handleBlur(e)}
                     onChange={(e) => handleSelect(e)}>
-                <option hidden selected value='vacio'>Seleccione el tipo de Dieta</option>
+                <option hidden value='vacio'>Seleccione el tipo de Dieta</option>
                     {dietType?.map((d) => (
                         <option key={d.name} value={d.name}>{d.name}</option>
                 ))}
