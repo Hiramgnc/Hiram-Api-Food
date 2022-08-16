@@ -9,9 +9,10 @@ export default function Card({title, diets,image}) {
                 src={image ? image :'https://i.postimg.cc/VLcD9zKM/Pordefecto.jpg'} alt='Imagen no disponible'/>
                 <div className={styles.contentBox}>
                     <h2 className={styles.title}>{title}</h2>
-                    <p className={styles.diet}>Diets: {diets}</p>
+                    <h4 className={styles.diet}>Diets: {diets}</h4>
                 </div>
                 <a className ={styles.link} href={`recipe/${title.id}`}>Ver Detalle</a>
+
             </div>
         </div>
     )

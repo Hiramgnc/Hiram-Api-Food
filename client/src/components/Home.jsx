@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRecipes, orderByName, orderByScore, filterByDiets, filterCreatedInDb } from '../actions';
+import { getRecipes, orderByName, orderByScore, filterByDiets } from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 import Paginate from './Paginate';
@@ -54,13 +54,6 @@ export default function Home() {
         setCurrentPage(1);
     }
 
-    //Filtrado por creados en Db
-    function handleFilterCreatedInDb(e) {
-        dispatch(filterCreatedInDb(e.target.value))
-        setOrden(`ordenado ${e.target.value}`);
-        setCurrentPage(1);
-    }
-
     return (
         <div className={styles.background}>
             <div className={styles.head}>
@@ -73,7 +66,6 @@ export default function Home() {
             </div>
 
 
-            {/* Filtros */}
             <div className={styles.bordercont}>
                 
                 {/* Opciones para ordenar tanto ascendentemente como descendentemente las recetas por orden alfabético */}
@@ -106,12 +98,6 @@ export default function Home() {
                     <option value="vegetarian">Vegetarian</option>
                 </select>
 
-                <select className={styles.select} onChange={e=> handleFilterCreatedInDb(e)}>
-                    <option value="all">Todas las recetas</option>
-                    <option value="created">Creadas</option>
-                    <option value="api">Existentes</option>
-                </select>
-
                 <button className={styles.button} onClick = {e => {handleClick(e)}}>
                     Volver a Recetas
                 </button>
@@ -140,6 +126,8 @@ export default function Home() {
                 }
 
                 </div>  
+                
+                {/* : <div className={styles.loading}><img src="https://i.gifer.com/ZKZg.gif" alt="loading" /></div> */}
 
                 <Paginate
                     recipesPerPage={recipesPerPage}
@@ -148,7 +136,7 @@ export default function Home() {
                     key={1}
                 />
                 
-            </div>
+            </div> 
         </div>
     )
 }

@@ -195,6 +195,7 @@ export default function RecipeCreate() {
                         <option key={d.name} value={d.name}>{d.name}</option>
                 ))}
                 </select>
+                
                 {errors.diets && <p className={styles.err}> {errors.diets}</p>}
                 <ul>
                     <li>{input.diets.map(e => e + " ,")}</li>

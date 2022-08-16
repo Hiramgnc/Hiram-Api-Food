@@ -87,11 +87,3 @@ export function getDetail (id) {
         }
     }
 }
-
-//Filtrado creado en db
-export function filterCreatedInDb(payload){
-    return{
-        type: 'FILTER_CREATED_IN_DB',
-        payload
-    }
-}

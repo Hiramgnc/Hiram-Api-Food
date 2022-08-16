@@ -2,7 +2,7 @@
 
 const inicialState = {
     recipes: [],
-    allRecipes: [], //Filtro diets
+    allRecipes: [], 
     //Formulario
     diets: [],
     typeDiets: [],
@@ -107,17 +107,6 @@ function roodReducer(state = inicialState, action) {
                 ...state,
                 recipes: dietsFilter
             }
-
-        //Filtrado creado en db
-        case "FILTER_CREATED_IN_DB":
-        const createdFilter = action.payload === "created"
-            ? state.allRecipes.filter((e) => e.createdInDB)
-            : state.allRecipes.filter((e) => !e.createdInDB);
-        return {
-            ...state,
-            recipes: action.payload === "all" ? state.allRecipes : createdFilter,
-        };
-        
 
         case 'GET_DETAIL':
             return {
